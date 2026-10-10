@@ -1,4 +1,4 @@
-import { Outlet, Link, useLocation } from 'react-router-dom'
+import { Outlet, Link, useLocation, NavLink } from 'react-router-dom'
 import {
   Squares2X2Icon,
   ServerStackIcon,
@@ -9,6 +9,14 @@ import {
 
 export default function Layout() {
   const location = useLocation()
+
+  const navItems = [
+    { path: '/', label: 'Dashboard', icon: Squares2X2Icon },
+    { path: '/assets', label: 'Assets', icon: ServerStackIcon },
+    { path: '/incidents', label: 'Incidents', icon: ExclamationTriangleIcon },
+    { path: '/monitoring', label: 'Monitoring', icon: SignalIcon },
+    { path: '/settings', label: 'Settings', icon: Cog6ToothIcon },
+  ]
 
   return (
     <div className="app-layout">
@@ -22,26 +30,16 @@ export default function Layout() {
         </div>
 
         <nav className="sidebar-nav">
-          <Link to="/" className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}>
-            <Squares2X2Icon className="w-5 h-5" />
-            <span>Dashboard</span>
-          </Link>
-          <a href="#" className="nav-item" onClick={(e) => e.preventDefault()}>
-            <ServerStackIcon className="w-5 h-5" />
-            <span>Assets</span>
-          </a>
-          <a href="#" className="nav-item" onClick={(e) => e.preventDefault()}>
-            <ExclamationTriangleIcon className="w-5 h-5" />
-            <span>Incidents</span>
-          </a>
-          <Link to="/monitoring" className={`nav-item ${location.pathname === '/monitoring' ? 'active' : ''}`}>
-            <SignalIcon className="w-5 h-5" />
-            <span>Monitoring</span>
-          </Link>
-          <a href="#" className="nav-item" onClick={(e) => e.preventDefault()}>
-            <Cog6ToothIcon className="w-5 h-5" />
-            <span>Settings</span>
-          </a>
+          {navItems.map(item => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+            >
+              <item.icon className="w-5 h-5" />
+              <span>{item.label}</span>
+            </NavLink>
+          ))}
         </nav>
 
         <div className="sidebar-footer">
@@ -56,12 +54,18 @@ export default function Layout() {
         <header className="top-bar">
           <div className="top-bar-left">
             <h1 className="page-title">
-              {location.pathname === '/monitoring' ? 'Monitoring' : 'Operations Dashboard'}
+              {location.pathname === '/assets' ? 'Asset Inventory' :
+               location.pathname === '/incidents' ? 'Incident Management' :
+               location.pathname === '/monitoring' ? 'Monitoring' :
+               location.pathname === '/settings' ? 'Settings' :
+               'Operations Dashboard'}
             </h1>
             <span className="page-subtitle">
-              {location.pathname === '/monitoring'
-                ? 'Real-time infrastructure monitoring results'
-                : 'IT Production Monitoring & Infrastructure Intelligence'}
+              {location.pathname === '/assets' ? 'Manage and monitor all infrastructure assets' :
+               location.pathname === '/incidents' ? 'Track and resolve IT incidents' :
+               location.pathname === '/monitoring' ? 'Real-time infrastructure monitoring results' :
+               location.pathname === '/settings' ? 'Configure platform settings' :
+               'IT Production Monitoring & Infrastructure Intelligence'}
             </span>
           </div>
           <div className="top-bar-right">
