@@ -21,10 +21,10 @@ import {
 } from '@heroicons/react/24/outline'
 
 const severityConfig: Record<string, { label: string; color: string; icon: React.ReactNode }> = {
-  critical: { label: 'Critical', color: 'bg-red-500', icon: <FireIcon className="w-4 h-4" /> },
-  high: { label: 'High', color: 'bg-amber-500', icon: <ExclamationTriangleIcon className="w-4 h-4" /> },
-  medium: { label: 'Medium', color: 'bg-blue-500', icon: <BoltIcon className="w-4 h-4" /> },
-  low: { label: 'Low', color: 'bg-gray-500', icon: <ClockIcon className="w-4 h-4" /> },
+  critical: { label: 'Critical', color: 'bg-red-500', icon: <FireIcon className="w-3.5 h-3.5" /> },
+  high: { label: 'High', color: 'bg-amber-500', icon: <ExclamationTriangleIcon className="w-3.5 h-3.5" /> },
+  medium: { label: 'Medium', color: 'bg-blue-500', icon: <BoltIcon className="w-3.5 h-3.5" /> },
+  low: { label: 'Low', color: 'bg-gray-500', icon: <ClockIcon className="w-3.5 h-3.5" /> },
 }
 
 const statusConfig: Record<string, { label: string; color: string }> = {
@@ -105,7 +105,6 @@ export default function Incidents() {
     )
   }
 
-  // Stats
   const stats = {
     total: incidents.length,
     open: incidents.filter(i => i.status === 'open').length,
@@ -117,7 +116,6 @@ export default function Incidents() {
 
   return (
     <div className="dashboard">
-      {/* Header */}
       <div className="page-header">
         <div className="page-header-left">
           <h1 className="page-title">Incident Management</h1>
@@ -126,16 +124,15 @@ export default function Incidents() {
           </span>
         </div>
         <button className="btn-primary">
-          <PlusIcon className="w-4 h-4 mr-2" />
+          <PlusIcon className="w-3.5 h-3.5 mr-2" />
           Create Incident
         </button>
       </div>
 
-      {/* Stats Cards */}
       <div className="status-cards-grid">
         <div className="status-card status-card-danger">
           <div className="status-card-header">
-            <div className="status-card-icon"><FireIcon className="w-4 h-4" /></div>
+            <div className="status-card-icon"><FireIcon className="w-3.5 h-3.5" /></div>
           </div>
           <div className="status-card-body">
             <span className="status-card-value">{stats.critical}</span>
@@ -144,7 +141,7 @@ export default function Incidents() {
         </div>
         <div className="status-card status-card-warning">
           <div className="status-card-header">
-            <div className="status-card-icon"><ExclamationTriangleIcon className="w-4 h-4" /></div>
+            <div className="status-card-icon"><ExclamationTriangleIcon className="w-3.5 h-3.5" /></div>
           </div>
           <div className="status-card-body">
             <span className="status-card-value">{stats.open + stats.investigating + stats.in_progress - stats.critical}</span>
@@ -153,7 +150,7 @@ export default function Incidents() {
         </div>
         <div className="status-card status-card-success">
           <div className="status-card-header">
-            <div className="status-card-icon"><CheckCircleIcon className="w-4 h-4" /></div>
+            <div className="status-card-icon"><CheckCircleIcon className="w-3.5 h-3.5" /></div>
           </div>
           <div className="status-card-body">
             <span className="status-card-value">{stats.resolved}</span>
@@ -162,7 +159,7 @@ export default function Incidents() {
         </div>
         <div className="status-card status-card-info">
           <div className="status-card-header">
-            <div className="status-card-icon"><ClockIcon className="w-4 h-4" /></div>
+            <div className="status-card-icon"><ClockIcon className="w-3.5 h-3.5" /></div>
           </div>
           <div className="status-card-body">
             <span className="status-card-value">{stats.total}</span>
@@ -171,10 +168,9 @@ export default function Incidents() {
         </div>
       </div>
 
-      {/* Search & Filters */}
       <div className="filters-bar">
         <div className="search-box">
-          <MagnifyingGlassIcon className="w-5 h-5" />
+          <MagnifyingGlassIcon className="w-4 h-4" />
           <input
             type="text"
             placeholder="Search incident ID, title, description, technician..."
@@ -196,13 +192,12 @@ export default function Incidents() {
             {categories.map(c => <option key={c} value={c}>{categoryLabels[c] || c}</option>)}
           </select>
           <button className="btn-secondary" onClick={() => { setSearch(''); setFilterStatus('all'); setFilterSeverity('all'); setFilterCategory('all') }}>
-            <ArrowPathIcon className="w-4 h-4 mr-1" />
+            <ArrowPathIcon className="w-3.5 h-3.5 mr-1" />
             Reset
           </button>
         </div>
       </div>
 
-      {/* Incidents Table */}
       <div className="infrastructure-section">
         <div className="table-container">
           <table className="data-table">
@@ -250,10 +245,10 @@ export default function Incidents() {
                       <td>
                         <div className="action-buttons">
                           <button className="action-btn" title="View">
-                            <MagnifyingGlassIcon className="w-4 h-4" />
+                            <MagnifyingGlassIcon className="w-3.5 h-3.5" />
                           </button>
                           <button className="action-btn" title="Edit">
-                            <PencilIcon className="w-4 h-4" />
+                            <PencilIcon className="w-3.5 h-3.5" />
                           </button>
                         </div>
                       </td>
@@ -289,21 +284,20 @@ export default function Incidents() {
                           </div>
                           <div className="expanded-actions">
                             <button className="btn-secondary">
-                              <PencilIcon className="w-4 h-4 mr-1" />
+                              <PencilIcon className="w-3.5 h-3.5 mr-1" />
                               Edit
                             </button>
                             <button className="btn-secondary">
-                              <DocumentTextIcon className="w-4 h-4 mr-1" />
+                              <DocumentTextIcon className="w-3.5 h-3.5 mr-1" />
                               View Timeline
                             </button>
                             <button className="btn-primary">
-                              <CheckCircleIcon className="w-4 h-4 mr-1" />
+                              <CheckCircleIcon className="w-3.5 h-3.5 mr-1" />
                               Resolve
                             </button>
                           </div>
-                        </div>
-                      </td>
-                    </tr>
+                        </td>
+                      </tr>
                     )}
                   </React.Fragment>
                 ))
@@ -325,6 +319,3 @@ export default function Incidents() {
     </div>
   )
 }
-
-// Need to import PlusIcon
-import { PlusIcon } from '@heroicons/react/24/outline'

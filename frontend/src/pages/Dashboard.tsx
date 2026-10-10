@@ -161,28 +161,28 @@ export default function Dashboard() {
           value={stats?.total_assets ?? 0}
           subtitle="All monitored devices"
           variant="info"
-          icon={<ComputerDesktopIcon className="w-4 h-4" />}
+          icon={<ComputerDesktopIcon className="w-3.5 h-3.5" />}
         />
         <StatusCard
           title="Online"
           value={stats?.online_assets ?? 0}
           subtitle="Responding to checks"
           variant="success"
-          icon={<CheckCircleIcon className="w-4 h-4" />}
+          icon={<CheckCircleIcon className="w-3.5 h-3.5" />}
         />
         <StatusCard
           title="Warning"
           value={stats?.warning_assets ?? 0}
           subtitle="Degraded performance"
           variant="warning"
-          icon={<ExclamationTriangleIcon className="w-4 h-4" />}
+          icon={<ExclamationTriangleIcon className="w-3.5 h-3.5" />}
         />
         <StatusCard
           title="Offline"
           value={stats?.offline_assets ?? 0}
           subtitle="Not responding"
           variant="danger"
-          icon={<XCircleIcon className="w-4 h-4" />}
+          icon={<XCircleIcon className="w-3.5 h-3.5" />}
         />
       </div>
 
@@ -193,28 +193,28 @@ export default function Dashboard() {
           value={stats?.active_incidents ?? 0}
           subtitle="Requires attention"
           variant="info"
-          icon={<BoltIcon className="w-4 h-4" />}
+          icon={<BoltIcon className="w-3.5 h-3.5" />}
         />
         <StatusCard
           title="Critical"
           value={stats?.critical_incidents ?? 0}
           subtitle="Immediate action required"
           variant="danger"
-          icon={<FireIcon className="w-4 h-4" />}
+          icon={<FireIcon className="w-3.5 h-3.5" />}
         />
         <StatusCard
           title="High"
           value={stats?.high_incidents ?? 0}
           subtitle="Urgent attention needed"
           variant="warning"
-          icon={<ExclamationTriangleIcon className="w-4 h-4" />}
+          icon={<ExclamationTriangleIcon className="w-3.5 h-3.5" />}
         />
         <StatusCard
           title="Medium"
           value={stats?.medium_incidents ?? 0}
           subtitle="Standard priority"
           variant="default"
-          icon={<SignalIcon className="w-4 h-4" />}
+          icon={<SignalIcon className="w-3.5 h-3.5" />}
         />
       </div>
 

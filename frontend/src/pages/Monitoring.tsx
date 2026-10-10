@@ -64,26 +64,26 @@ export default function Monitoring() {
   const getResultIcon = (result: string) => {
     switch (result) {
       case 'success':
-        return <CheckCircleIcon className="w-4 h-4 text-emerald-500" />
+        return <CheckCircleIcon className="w-3.5 h-3.5 text-emerald-500" />
       case 'failure':
-        return <XCircleIcon className="w-4 h-4 text-red-500" />
+        return <XCircleIcon className="w-3.5 h-3.5 text-red-500" />
       case 'timeout':
-        return <ExclamationTriangleIcon className="w-4 h-4 text-amber-500" />
+        return <ExclamationTriangleIcon className="w-3.5 h-3.5 text-amber-500" />
       default:
-        return <ClockIcon className="w-4 h-4 text-slate-500" />
+        return <ClockIcon className="w-3.5 h-3.5 text-slate-500" />
     }
   }
 
   const getCheckTypeIcon = (type: string) => {
     switch (type) {
       case 'icmp':
-        return <SignalIcon className="w-4 h-4" />
+        return <SignalIcon className="w-3.5 h-3.5" />
       case 'tcp':
-        return <ServerStackIcon className="w-4 h-4" />
+        return <ServerStackIcon className="w-3.5 h-3.5" />
       case 'http':
-        return <GlobeAltIcon className="w-4 h-4" />
+        return <GlobeAltIcon className="w-3.5 h-3.5" />
       default:
-        return <ClockIcon className="w-4 h-4" />
+        return <ClockIcon className="w-3.5 h-3.5" />
     }
   }
 
@@ -120,7 +120,7 @@ export default function Monitoring() {
         <div className="status-card status-card-info">
           <div className="status-card-header">
             <div className="status-card-icon">
-              <SignalIcon className="w-4 h-4" />
+              <SignalIcon className="w-3.5 h-3.5" />
             </div>
           </div>
           <div className="status-card-body">
@@ -133,7 +133,7 @@ export default function Monitoring() {
         <div className="status-card status-card-success">
           <div className="status-card-header">
             <div className="status-card-icon">
-              <ServerStackIcon className="w-4 h-4" />
+              <ServerStackIcon className="w-3.5 h-3.5" />
             </div>
           </div>
           <div className="status-card-body">
@@ -146,7 +146,7 @@ export default function Monitoring() {
         <div className="status-card status-card-warning">
           <div className="status-card-header">
             <div className="status-card-icon">
-              <GlobeAltIcon className="w-4 h-4" />
+              <GlobeAltIcon className="w-3.5 h-3.5" />
             </div>
           </div>
           <div className="status-card-body">
@@ -159,7 +159,7 @@ export default function Monitoring() {
         <div className="status-card status-card-danger">
           <div className="status-card-header">
             <div className="status-card-icon">
-              <XCircleIcon className="w-4 h-4" />
+              <XCircleIcon className="w-3.5 h-3.5" />
             </div>
           </div>
           <div className="status-card-body">

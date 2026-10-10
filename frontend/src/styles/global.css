@@ -423,17 +423,17 @@ body {
 }
 
 .status-card-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .status-card-icon svg {
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
 }
 
 .status-card-success .status-card-icon {
@@ -1241,11 +1241,11 @@ body {
 .type-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 2px 8px;
-  border-radius: 10px;
+  gap: 4px;
+  padding: 1px 6px;
+  border-radius: 8px;
   background: var(--bg-primary);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   color: var(--accent-blue);
 }
@@ -1254,10 +1254,10 @@ body {
 .status-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-size: 11px;
+  gap: 4px;
+  padding: 1px 6px;
+  border-radius: 8px;
+  font-size: 10px;
   font-weight: 600;
 }
 
@@ -1270,10 +1270,10 @@ body {
 .severity-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-size: 11px;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 10px;
   font-weight: 600;
   color: white;
 }
@@ -1282,9 +1282,9 @@ body {
 .priority-badge {
   display: inline-flex;
   align-items: center;
-  padding: 3px 8px;
-  border-radius: 8px;
-  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 10px;
   font-weight: 700;
   color: white;
 }
@@ -1292,10 +1292,10 @@ body {
 /* Category Badge */
 .category-badge {
   display: inline-block;
-  padding: 2px 8px;
-  border-radius: 10px;
+  padding: 1px 6px;
+  border-radius: 8px;
   background: var(--bg-primary);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 500;
   color: var(--text-secondary);
 }
@@ -1303,10 +1303,10 @@ body {
 /* Role Badge */
 .role-badge {
   display: inline-block;
-  padding: 2px 8px;
-  border-radius: 10px;
+  padding: 1px 6px;
+  border-radius: 8px;
   background: rgba(59, 130, 246, 0.15);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   color: var(--accent-blue);
 }
@@ -1314,9 +1314,9 @@ body {
 /* Criticality Badge */
 .criticality-badge {
   display: inline-block;
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 8px;
+  font-size: 10px;
   font-weight: 600;
   color: white;
 }
@@ -1324,15 +1324,15 @@ body {
 /* Action Buttons */
 .action-buttons {
   display: flex;
-  gap: 6px;
+  gap: 4px;
 }
 
 .action-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: 6px;

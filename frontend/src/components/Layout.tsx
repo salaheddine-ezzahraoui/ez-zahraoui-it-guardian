@@ -36,7 +36,7 @@ export default function Layout() {
               to={item.path}
               className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
             >
-              <item.icon className="w-5 h-5" />
+              <item.icon className="w-4 h-4" />
               <span>{item.label}</span>
             </NavLink>
           ))}

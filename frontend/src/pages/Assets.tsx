@@ -21,13 +21,13 @@ import {
 } from '@heroicons/react/24/outline'
 
 const typeIcons: Record<string, React.ReactNode> = {
-  production_pc: <ComputerDesktopIcon className="w-5 h-5" />,
-  server: <ServerStackIcon className="w-5 h-5" />,
-  switch: <CpuChipIcon className="w-5 h-5" />,
-  router: <CpuChipIcon className="w-5 h-5" />,
-  printer: <PrinterIcon className="w-5 h-5" />,
-  application: <GlobeAltIcon className="w-5 h-5" />,
-  network_service: <GlobeAltIcon className="w-5 h-5" />,
+  production_pc: <ComputerDesktopIcon className="w-2 h-2" />,
+  server: <ServerStackIcon className="w-2 h-2" />,
+  switch: <CpuChipIcon className="w-2 h-2" />,
+  router: <CpuChipIcon className="w-2 h-2" />,
+  printer: <PrinterIcon className="w-2 h-2" />,
+  application: <GlobeAltIcon className="w-2 h-2" />,
+  network_service: <GlobeAltIcon className="w-2 h-2" />,
 }
 
 const typeLabels: Record<string, string> = {
@@ -41,10 +41,10 @@ const typeLabels: Record<string, string> = {
 }
 
 const statusIcons: Record<string, React.ReactNode> = {
-  online: <CheckCircleIcon className="w-4 h-4 text-emerald-500" />,
-  warning: <ExclamationTriangleIcon className="w-4 h-4 text-amber-500" />,
-  offline: <XCircleIcon className="w-4 h-4 text-red-500" />,
-  maintenance: <ArrowPathIcon className="w-4 h-4 text-blue-500" />,
+  online: <CheckCircleIcon className="w-3 h-3 text-emerald-500" />,
+  warning: <ExclamationTriangleIcon className="w-3 h-3 text-amber-500" />,
+  offline: <XCircleIcon className="w-3 h-3 text-red-500" />,
+  maintenance: <ArrowPathIcon className="w-3 h-3 text-blue-500" />,
 }
 
 const statusLabels: Record<string, string> = {
@@ -115,8 +115,8 @@ export default function Assets() {
   const types = [...new Set(assets.map(a => a.asset_type))].sort()
   const statuses = ['online', 'warning', 'offline', 'maintenance']
 
-  const typeIcon = (type: string) => typeIcons[type] || <DevicePhoneMobileIcon className="w-5 h-5" />
-  const statusIcon = (status: string) => statusIcons[status] || <ArrowPathIcon className="w-4 h-4 text-slate-500" />
+  const typeIcon = (type: string) => typeIcons[type] || <DevicePhoneMobileIcon className="w-4 h-4" />
+  const statusIcon = (status: string) => statusIcons[status] || <ArrowPathIcon className="w-3.5 h-3.5 text-slate-500" />
   const statusLabel = (status: string) => statusLabels[status] || status
 
   if (loading) {
@@ -137,7 +137,7 @@ export default function Assets() {
           <span className="page-subtitle">{assets.length} total assets • {assets.filter(a => a.status === 'online').length} online</span>
         </div>
         <button className="btn-primary">
-          <PlusIcon className="w-4 h-4 mr-2" />
+          <PlusIcon className="w-3 h-3 mr-2" />
           Add Asset
         </button>
       </div>
@@ -145,7 +145,7 @@ export default function Assets() {
       {/* Search & Filters */}
       <div className="filters-bar">
         <div className="search-box">
-          <MagnifyingGlassIcon className="w-5 h-5" />
+          <MagnifyingGlassIcon className="w-3.5 h-3.5" />
           <input
             type="text"
             placeholder="Search hostname, IP, production line..."
@@ -163,7 +163,7 @@ export default function Assets() {
             {statuses.map(s => <option key={s} value={s}>{statusLabel(s)}</option>)}
           </select>
           <button className="btn-secondary" onClick={() => { setSearch(''); setFilterType('all'); setFilterStatus('all') }}>
-            <ArrowPathIcon className="w-4 h-4 mr-1" />
+            <ArrowPathIcon className="w-3 h-3 mr-1" />
             Reset
           </button>
         </div>
@@ -176,28 +176,28 @@ export default function Assets() {
             <thead>
               <tr>
                 <th onClick={() => handleSort('hostname')}>
-                  Hostname <ArrowPathIcon className="w-4 h-4 inline ml-1" />
+                  Hostname <ArrowPathIcon className="w-3 h-3 inline ml-1" />
                 </th>
                 <th onClick={() => handleSort('asset_type')}>
-                  Type <ArrowPathIcon className="w-4 h-4 inline ml-1" />
+                  Type <ArrowPathIcon className="w-3 h-3 inline ml-1" />
                 </th>
                 <th onClick={() => handleSort('ip_address')}>
-                  IP Address <ArrowPathIcon className="w-4 h-4 inline ml-1" />
+                  IP Address <ArrowPathIcon className="w-3 h-3 inline ml-1" />
                 </th>
                 <th onClick={() => handleSort('production_line')}>
-                  Production Line <ArrowPathIcon className="w-4 h-4 inline ml-1" />
+                  Production Line <ArrowPathIcon className="w-3 h-3 inline ml-1" />
                 </th>
                 <th onClick={() => handleSort('status')}>
-                  Status <ArrowPathIcon className="w-4 h-4 inline ml-1" />
+                  Status <ArrowPathIcon className="w-3 h-3 inline ml-1" />
                 </th>
                 <th onClick={() => handleSort('criticality')}>
-                  Criticality <ArrowPathIcon className="w-4 h-4 inline ml-1" />
+                  Criticality <ArrowPathIcon className="w-3 h-3 inline ml-1" />
                 </th>
                 <th onClick={() => handleSort('location')}>
-                  Location <ArrowPathIcon className="w-4 h-4 inline ml-1" />
+                  Location <ArrowPathIcon className="w-3 h-3 inline ml-1" />
                 </th>
                 <th onClick={() => handleSort('last_check')}>
-                  Last Check <ArrowPathIcon className="w-4 h-4 inline ml-1" />
+                  Last Check <ArrowPathIcon className="w-3 h-3 inline ml-1" />
                 </th>
                 <th>Actions</th>
               </tr>
@@ -233,13 +233,13 @@ export default function Assets() {
                     <td>
                       <div className="action-buttons">
                         <button className="action-btn" title="View">
-                          <MagnifyingGlassIcon className="w-4 h-4" />
+                          <MagnifyingGlassIcon className="w-3 h-3" />
                         </button>
                         <button className="action-btn" title="Edit">
-                          <PencilIcon className="w-4 h-4" />
+                          <PencilIcon className="w-3 h-3" />
                         </button>
                         <button className="action-btn danger" title="Delete">
-                          <TrashIcon className="w-4 h-4" />
+                          <TrashIcon className="w-3 h-3" />
                         </button>
                       </div>
                     </td>

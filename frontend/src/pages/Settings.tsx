@@ -89,7 +89,7 @@ export default function Settings() {
             className={`settings-tab ${activeTab === tab.id ? 'active' : ''}`}
             onClick={() => setActiveTab(tab.id)}
           >
-            <tab.icon className="w-5 h-5 mr-2" />
+            <tab.icon className="w-4 h-4 mr-2" />
             {tab.label}
           </button>
         ))}
@@ -236,17 +236,17 @@ export default function Settings() {
               <button className="btn-secondary" onClick={() => handleSave('monitoring', monitoringSettings)} disabled={loading}>
                 {loading ? (
                   <>
-                    <ArrowPathIcon className="w-4 h-4 mr-2 animate-spin" />
+                    <ArrowPathIcon className="w-3.5 h-3.5 mr-2 animate-spin" />
                     Saving...
                   </>
                 ) : (
                   <>
-                    <CheckCircleIcon className="w-4 h-4 mr-2" />
+                    <CheckCircleIcon className="w-3.5 h-3.5 mr-2" />
                     Save Monitoring Settings
                   </>
                 )}
               </button>
-              {saved && <span className="save-success"><CheckCircleIcon className="w-4 h-4 mr-1" /> Saved!</span>}
+              {saved && <span className="save-success"><CheckCircleIcon className="w-3.5 h-3.5 mr-1" /> Saved!</span>}
             </div>
           </SettingsSection>
         )}
@@ -363,8 +363,8 @@ export default function Settings() {
                       <td className="text-sm text-slate-400">{user.lastLogin}</td>
                       <td>
                         <div className="action-buttons">
-                          <button className="action-btn" title="Edit"><PencilIcon className="w-4 h-4" /></button>
-                          <button className="action-btn danger" title="Delete"><TrashIcon className="w-4 h-4" /></button>
+                          <button className="action-btn" title="Edit"><PencilIcon className="w-3.5 h-3.5" /></button>
+                          <button className="action-btn danger" title="Delete"><TrashIcon className="w-3.5 h-3.5" /></button>
                         </div>
                       </td>
                     </tr>
@@ -374,7 +374,7 @@ export default function Settings() {
             </div>
             <div className="settings-actions">
               <button className="btn-primary">
-                <PlusIcon className="w-4 h-4 mr-2" />
+                <PlusIcon className="w-3.5 h-3.5 mr-2" />
                 Add User
               </button>
             </div>
